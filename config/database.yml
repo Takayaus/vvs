@@ -81,5 +81,6 @@ test:
 production:
   <<: *default
   database: vvs_production
-  username: vvs
-  password: <%= ENV['VVS_DATABASE_PASSWORD'] %>
+  username: postgres
+  password: <%= Rails.application.credentials.db[:password] %>
+  host: <%= Rails.application.credentials.db[:hostname] %>
